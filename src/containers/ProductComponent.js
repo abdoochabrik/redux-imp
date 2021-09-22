@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
-
+import {Link } from 'react-router-dom'
 export default function ProductComponent() {
 
     const products = useSelector((state) => state.allProducts.products);
@@ -8,7 +8,8 @@ export default function ProductComponent() {
     const renderList =
         products.map(p => {
         return (
-            <div className="four column wide">
+            <div className="four column wide" key={p.id}>
+                <Link to={`/product/${p.id}`}>
             <div className="ui link cards">
                 <div className="card">
                     <div className="image">
@@ -20,7 +21,7 @@ export default function ProductComponent() {
                     </div>
                 </div>
             </div>
-
+              </Link>
         </div>
         )
     })
