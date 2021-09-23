@@ -9,7 +9,7 @@ export default function ProductComponent() {
         products.map(p => {
         return (
             <div className="four column wide" key={p.id}>
-                <Link to={`/product/${p.id}`}>
+                <Link to={`/products/${p.id}`}>
             <div className="ui link cards">
                 <div className="card">
                     <div className="image">
