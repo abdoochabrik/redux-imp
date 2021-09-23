@@ -19,8 +19,20 @@ export default function ProductDetail() {
             fetchProductDetail();
     },[productId])
     return (
-        <div>
-            <h1>ProductDetail</h1>
+        <div className="ui grid container">
+            {Object.keys(product).length === 0 ? (
+                <div>... loading</div>
+            ) : 
+            (
+                <div>
+                  
+                    <p>{product.category}</p>
+                    <p>{product.title}</p>
+                    <p>{product.description}</p>
+                    <p>{product.price}</p>
+                </div>
+            )
+            }
         </div>
     )
 }
